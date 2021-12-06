@@ -1,0 +1,65 @@
+:root {
+    --gridRows: 1;
+    --gridColumns: 1;
+}
+
+@font-face {
+    font-family: 'VCR';
+    src: url(fonts/VCR_OSD_MONO_1.001.ttf)
+}
+
+* {
+    background-color: lightseagreen;
+}
+
+.header {
+    font-family: 'VCR';
+    text-align: center;
+    font-size: 80px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+
+.center {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    gap: 50px;
+    text-align: center;
+}
+
+.footer {
+    font-family: 'VCR';
+    text-align: center;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+#container {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(var(--gridRows), 1fr);
+    grid-template-rows: repeat(var(--gridColumns), 1fr);
+    background-color: white;
+}
+
+button {
+    background-color: lightskyblue;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    padding: 7px;
+    cursor: pointer;
+}
+
+
+#square {
+    border: 1px solid gray;
+    background-color: white;
+}
