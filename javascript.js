@@ -37,6 +37,7 @@ function colorPicker () {
 }
 
 
+
 //controls for selecting mode
 const modes = document.querySelectorAll('.modes')
 modes.forEach((modeSelected) => {
@@ -45,6 +46,10 @@ modes.forEach((modeSelected) => {
         fillSquare(modeSelected);
     });
 });
+
+//function that gives control outline based on mode selected
+
+
 
 //function that delivers output based off of mode selected
 function fillSquare (modeSelected) {
@@ -78,6 +83,18 @@ function eraseGrid () {
     });
 }
 
+//changes cursor based on if square is filled or not
+function changeGridCursor () {
+    const grid = document.querySelectorAll('#container > div');
+    grid.forEach((square) => {
+    if (square.style.backgroundColor = 'white') {
+        square.style.cursor = 'crosshair'
+    } else {
+        square.style.cursor = 'default'
+    }
+});
+}
+
 //prompts user for grid size
 function gridSize () {
     let rows= prompt('Enter a whole number between 1-100 for your new grid size.')
@@ -93,8 +110,9 @@ function gridSize () {
 }
 }
 
-makeGrid(16,16)
+makeGrid(30,30)
 colorPicker();
+changeGridCursor();
 
 
 
