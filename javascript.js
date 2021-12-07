@@ -1,5 +1,9 @@
 const container = document.getElementById('container');
 
+
+
+
+
 //function for making grids
 function makeGrid(rows, columns) {
     container.style.setProperty('--gridRows', rows);
