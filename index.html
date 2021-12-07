@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <script src = 'javascript.js' defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class='header'>Etch-a-Sketch</h1>
+    <div class='center'>
+        
+        <div class="controls">
+            <button class ='buttons' onclick='eraseGrid()' id ='resetBtn'>Erase Grid</button>
+            <button class ='buttons' onclick='gridSize()' id="gridSize">Grid Size</button>
+            <button class ='modes' id="monochrome">Monochrome Mode</button>
+            <button class ='modes' id ='Picker'> <input class ='modes'type ='color' id='color'>Color Picker</button>
+            <button class ='modes' id="eraser">Eraser</button>
+        </div>
+        <div id="container"></div>
+        <h3 class="footer">Made by Dylon Gaddi</h3>
+    </div>
+    
+</body>
+</html>

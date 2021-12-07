@@ -1,5 +1,9 @@
 const container = document.getElementById('container');
 
+
+
+
+
 //function for making grids
 function makeGrid(rows, columns) {
     container.style.setProperty('--gridRows', rows);
@@ -19,18 +23,27 @@ function eraser () {
     this.style.backgroundColor ='white'
 }
 
-function RGB () {
-
+//colorPicker
+function colorPicker () {
+    let colorSelected = document.querySelector('#color')
+    colorSelected.addEventListener('input', () => {
+        let color = colorSelected.value;
+    const grid = document.querySelectorAll('#container > div');
+        grid.forEach((square) => {
+            square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = color;
+    });
+});
+});
 }
 
 
-
-//selects mode
+//controls for selecting mode
 const modes = document.querySelectorAll('.modes')
 modes.forEach((modeSelected) => {
     modeSelected.addEventListener('click', function() {
-        const mode=this.textContent;
-        fillSquare(mode);
+        let modeSelected=this.textContent;
+        fillSquare(modeSelected);
     });
 });
 
@@ -40,18 +53,14 @@ function fillSquare (modeSelected) {
     grid.forEach((square) => {
     if (modeSelected === 'Monochrome Mode') {
         square.removeEventListener('mouseover', eraser)
-        square.removeEventListener('mouseover', RGB)
         square.addEventListener('mouseover', monochrome)
     } else if (modeSelected === 'Eraser') {
         square.removeEventListener('mouseover', monochrome)
-        square.removeEventListener('mouseover', RGB)
         square.addEventListener('mouseover', eraser)
-    } else if (modeSelected === 'Rainbow Mode')
-        square.removeEventListener('mouseover', monochrome)
-        square.removeEventListener('mouseover', eraser)
-
+    }
     });
 }
+
 
 //resetGrid does not keep borders intact 
 //(maybe there is a way to make eraseGrid and resetGrid same function)
@@ -83,7 +92,7 @@ function gridSize () {
 }
 
 makeGrid(16,16)
-
+colorPicker();
 
 
 
