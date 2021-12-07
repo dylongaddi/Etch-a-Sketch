@@ -3,7 +3,6 @@ const container = document.getElementById('container');
 
 
 
-
 //function for making grids
 function makeGrid(rows, columns) {
     container.style.setProperty('--gridRows', rows);
@@ -57,6 +56,9 @@ function fillSquare (modeSelected) {
     } else if (modeSelected === 'Eraser') {
         square.removeEventListener('mouseover', monochrome)
         square.addEventListener('mouseover', eraser)
+    } else if (modeSelected === ''){
+        square.removeEventListener('mouseover', eraser)
+        square.removeEventListener('mouseover', monochrome)
     }
     });
 }
