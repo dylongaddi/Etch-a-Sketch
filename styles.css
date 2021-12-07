@@ -54,6 +54,7 @@ input {
     grid-template-rows: repeat(var(--gridColumns), 1fr);
     background-color: white;
     border: 5px solid black;
+    cursor: crosshair;
 }
 
 button {
